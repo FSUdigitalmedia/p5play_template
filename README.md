@@ -7,7 +7,7 @@ This is a template repo that includes the following libraries:
 
 See the links for license information.
 
-`sketch.js` has a very simple game to demonstrate a few features of the p5play library. Wipe it out and make your own game! (After you record your high score, of course.)
+`sketch.js` has a very simple game to demonstrate a few features of the p5play library. (Since it's hosted via GitHub Pages, you can [play it here](https://fsudigitalmedia.github.io/p5play_template/)). Wipe it out and make your own game! (After you record your high score, of course.)
 
 ## Notes
 
