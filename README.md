@@ -9,8 +9,30 @@ See the links for license information.
 
 `sketch.js` has a very simple game to demonstrate a few features of the p5play library. (Since it's hosted via GitHub Pages, you can [play it here](https://fsudigitalmedia.github.io/p5play_template/)). Wipe it out and make your own game! (After you record your high score, of course.)
 
+## Q5.js
+
+The creator of p5play has created an alternative to p5.js called [q5.js](https://q5js.org/). It is smaller, faster, and better at some things than p5. Maybe that matters to you or maybe it doesn't. The p5play vscode extension (which is very useful) uses q5 by default so it's worth knowing something about it.
+
+If you copy and paste the code from this repo's sketch.js file, you'll see that it breaks. There are a couple changes required by q5:
+
+First, with q5.js you create the canvas outside of `setup()`, so you'll want to comment out the `createCanvas` line and instead put the following at the very top of `sketch.js`:
+
+```javascript
+new Q5();
+createCanvas("fullscreen");
+```
+
+Second, the `textFont()` function in q5 doesn't accept the font size as a second parameter, so you'll want to specify the font and the size separately:
+
+```javascript
+    textFont("Courier");
+    textSize(24);
+```
+
+Everything should work fine after those small changes.
+
 ## Notes
 
-If you want to include sound, be sure to uncomment the line in `index.html` that includes the `p5.sound` library.
+If you want to include sound, be sure to uncomment the line in `index.html` that includes the `p5.sound` library. (It's worth noting that q5.js still uses the p5 sound library)
 
-Finally, change the title in `index.html` and replace the contents of this `README.md` file with information about the game you've created.
+Finally, if you're using this as a template, change the title in `index.html` and replace the contents of this `README.md` file with information about the game you've created.
