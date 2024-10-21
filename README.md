@@ -13,23 +13,14 @@ See the links for license information.
 
 The creator of p5play has created an alternative to p5.js called [q5.js](https://q5js.org/). It is smaller, faster, and better at some things than p5. Maybe that matters to you or maybe it doesn't. The p5play vscode extension (which is very useful) uses q5 by default so it's worth knowing something about it.
 
-If you copy and paste the code from this repo's sketch.js file, you'll see that it breaks. There are a couple changes required by q5:
+If you copy and paste the code from this repo's sketch.js file, you'll see that it breaks. I'm not totally sure why, but it seems to require replacing `let canvas = new Canvas("fullscreen")` with `createCanvas("fullscreen")`. Otherwise, it works.
 
-First, with q5.js you create the canvas outside of `setup()`, so you'll want to comment out the `createCanvas` line and instead put the following at the very top of `sketch.js`:
-
-```javascript
-new Q5();
-createCanvas("fullscreen");
-```
-
-Second, the `textFont()` function in q5 doesn't accept the font size as a second parameter, so you'll want to specify the font and the size separately:
+One other detail is that the `textFont()` function in q5 doesn't accept the font size as a second parameter, so you'll want to specify the font and the size separately:
 
 ```javascript
     textFont("Courier");
     textSize(24);
 ```
-
-Everything should work fine after those small changes.
 
 ## Notes
 
